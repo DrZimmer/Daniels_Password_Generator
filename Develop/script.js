@@ -1,11 +1,11 @@
 // Assignment code here
 
-var special_chars = [""]
-var lowercase_letters = [""]
-var uppercase_letters = [""]
-var numeric = [1, 2, 3, 4]
-var possible_characters = [all vars above separated by comma]
-var test = lowercaseletters concat
+//var special_chars = [""]
+//var lowercase_letters = [""]
+//var uppercase_letters = [""]
+//var numeric = [1, 2, 3, 4]
+//var possible_characters = [all vars above separated by comma]
+//var test = lowercaseletters concat
 
 var password = ''
 for (var i = 0; i < 3; i++) {
