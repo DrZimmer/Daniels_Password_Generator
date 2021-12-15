@@ -42,13 +42,13 @@ var passwordRequirements = function() {
 }
 
 function getRandomLower() {
-  let value = Math.floor(Math.random() * 26);
+  let value = Math.floor(Math.random() * lowercaseLetters.length);
   value = lowercaseLetters[value]
   return value;
 };
 
 function getRandomUpper() {
-  let value = Math.floor(Math.random() * 26);
+  let value = Math.floor(Math.random() * lowercaseLetters.length);
   value = uppercaseLetters[value]
   return value;
 };
