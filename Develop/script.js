@@ -39,7 +39,7 @@ var passwordRequirements = function() {
   console.log(passwordLength)
   writePassword();
   generatePassword();
-}
+};
 
 function getRandomLower() {
   let value = Math.floor(Math.random() * lowercaseLetters.length);
@@ -55,6 +55,17 @@ function getRandomUpper() {
 
 console.log(getRandomLower());
 console.log(getRandomUpper());
+
+//turn this into an object so i can just do one function
+//passwordRequirements [{upper: [list of chars], lower: [list of chars], etc}]
+
+var passwordRequirements = {
+  length: length,
+  hasSpecialCharacters: hasSpecialCharacters,
+  hasNumberCharacters: hasNumberCharacters,
+  hasLowerCasedCharacters: hasLowerCasedCharacters,
+  hasUpperCasedCharacters: hasUpperCasedCharacters
+};
 
 
 //var test = lowercaseletters concat
@@ -88,4 +99,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", passwordRequirements);
+generateBtn.addEventListener("click", passwordRequirements());
