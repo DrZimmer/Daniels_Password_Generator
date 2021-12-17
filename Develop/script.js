@@ -4,7 +4,6 @@ var specialCharacters =  ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','
 var lowercaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppercaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; 
-var length = ''
 var characterArr = [specialCharacters, lowercaseLetters, uppercaseLetters, numeric];
 
 // //in your generatePassword function,  
@@ -20,7 +19,7 @@ var generatePassword = function () {
     window.alert("Please select a number between or including 8 and 128");
     return(generatePassword())
     };
-  //Ask user if they want special, number, lowercased, uppercased characters in the generated password
+  //Ask user if they want special, number, lowercased, uppercased characters in the generated password... then validates what they selected.
   const hasSpecialCharacters = confirm('Would you like to include special characters in your password? Ok for YES, cancel for NO.');
     if (hasSpecialCharacters === true) {
       window.alert("You have chosen to include special characters in your password");
@@ -44,7 +43,12 @@ var generatePassword = function () {
       window.alert("You have chosen to include upper case characters in your password");
     } else {
       window.alert("You have chosen NOT to include upper case characters in your password");
-    }
+    };
+  if (hasSpecialCharacters === false && hasNumberCharacters === false && hasLowerCasedCharacters === false && hasUpperCasedCharacters === false) {
+    window.alert("You haven't chosen ANY character types! START OVER!");
+    return(generatePassword());
+  }
+  //next lines here
 
 console.log(hasNumberCharacters);
 console.log(hasLowerCasedCharacters);
