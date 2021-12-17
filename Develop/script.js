@@ -55,10 +55,6 @@ var passwordRequirements = function () {
     return passwordRequirementsObj;
   };
 
-// //in your generatePassword function,  
-// //you check if any of these Boolean properties above are true,
-//you add the letters, or symbols, or numbers or lowercase in to an array!!!
-
 var generatePassword = function () {
 
   var requirements = passwordRequirements();
@@ -89,8 +85,8 @@ var generatePassword = function () {
     mustHaveCharacters.push(getRandom(uppercaseLetters));
   }
 
-  for(var i = 0; i < maybeCharacters.length; i++) {
-    //first for loop
+  for(var i = 0; i < requirements.passwordLength.length; i++) {
+    return finalPassword
   };
   for(var i = 0; i < mustHaveCharacters.length; i++) {
     finalPassword[i] = mustHaveCharacters[i];
@@ -100,8 +96,7 @@ var generatePassword = function () {
 
 //WORK ON THIS RANDOM FUNCTION TO 
 function random(passwordRequirementsObj) {
-  let value = Math.floor(Math.random() * lowercaseLetters.passwordLength);
-  value = lowercaseLetters[value]
+  const value = Math.floor(Math.random() * lowercaseLetters.passwordLength);
   return value;
 };
     //   var randomChar = possible_characters[math.floor(Math.random() * possible_characters.passwordLength + 1)];
