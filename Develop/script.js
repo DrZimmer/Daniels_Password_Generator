@@ -56,9 +56,9 @@ var passwordRequirements = function () {
   };
 
 var generatePassword = function () {
-  console.log(passwordLength);
+  
   var requirements = passwordRequirements();
-
+  
   var finalPassword = [];
 
   var maybeCharacters = [];
@@ -84,23 +84,16 @@ var generatePassword = function () {
     maybeCharacters = maybeCharacters.concat(specialCharacters);
     mustHaveCharacters.push(getRandom(specialCharacters));
   }
-  console.log(passwordLength);
-  console.log(maybeCharacters);
-  console.log(mustHaveCharacters);
+  
   for(var i = 0; i < requirements.passwordLength; i++) {
     var character = getRandom(maybeCharacters);
     finalPassword.push(character);
-    console.log(passwordLength);
-    console.log(maybeCharacters);
-    console.log(mustHaveCharacters);
   };
 
   for(var i = 0; i < mustHaveCharacters.length; i++) {
     finalPassword[i] = mustHaveCharacters[i];
   };
-  console.log(passwordLength);
-  console.log(maybeCharacters);
-  console.log(mustHaveCharacters);
+
   let answer = finalPassword.join('');
   return answer;
 };
@@ -111,11 +104,8 @@ function getRandom(requirements) {
   const value = Math.floor(Math.random() * requirements.length);
   return requirements[value];
 };
-    //   var randomChar = possible_characters[math.floor(Math.random() * possible_characters.passwordLength + 1)];
-    //   password = password + String(randomChar)
-    // };
-    
-    
+
+    //CODE PRESENTED AT THE BEGINNING BELOW:
     // Get references to the #generate element
     var generateBtn = document.querySelector("#generate");
     
