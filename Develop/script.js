@@ -15,6 +15,7 @@ var passwordRequirements = function () {
     window.alert("Please select a number between or including 8 and 128");
     return(generatePassword())
     };
+  console.log(passwordLength);
   //Ask user if they want special, number, lowercased, uppercased characters in the generated password... then validates what they selected.
   const hasSpecialCharacters = confirm('Would you like to include special characters in your password? Ok for YES, cancel for NO.');
     if (hasSpecialCharacters === true) {
@@ -42,7 +43,6 @@ var passwordRequirements = function () {
     };
     if (hasSpecialCharacters === false && hasNumberCharacters === false && hasLowerCasedCharacters === false && hasUpperCasedCharacters === false) {
       window.alert("You haven't chosen ANY character types! START OVER!");
-      return(generatePassword());
     }
     //passwordRequirements object to be referenced in generate password
     const passwordRequirementsObj = {
@@ -56,7 +56,7 @@ var passwordRequirements = function () {
   };
 
 var generatePassword = function () {
-
+  console.log(passwordLength);
   var requirements = passwordRequirements();
 
   var finalPassword = [];
@@ -72,32 +72,44 @@ var generatePassword = function () {
     maybeCharacters = maybeCharacters.concat(uppercaseLetters);
     mustHaveCharacters.push(getRandom(uppercaseLetters));
   }
-  if (requirements.hasUpperCasedCharacters) {
-    maybeCharacters = maybeCharacters.concat(uppercaseLetters);
-    mustHaveCharacters.push(getRandom(uppercaseLetters));
+  if (requirements.hasLowerCasedCharacters) {
+    maybeCharacters = maybeCharacters.concat(lowercaseLetters);
+    mustHaveCharacters.push(getRandom(lowercaseLetters));
   }
-  if (requirements.hasUpperCasedCharacters) {
-    maybeCharacters = maybeCharacters.concat(uppercaseLetters);
-    mustHaveCharacters.push(getRandom(uppercaseLetters));
+  if (requirements.hasNumberCharacters) {
+    maybeCharacters = maybeCharacters.concat(numeric);
+    mustHaveCharacters.push(getRandom(numeric));
   }
-  if (requirements.hasUpperCasedCharacters) {
-    maybeCharacters = maybeCharacters.concat(uppercaseLetters);
-    mustHaveCharacters.push(getRandom(uppercaseLetters));
+  if (requirements.hasSpecialCharacters) {
+    maybeCharacters = maybeCharacters.concat(specialCharacters);
+    mustHaveCharacters.push(getRandom(specialCharacters));
   }
-
-  for(var i = 0; i < requirements.passwordLength.length; i++) {
-    return finalPassword
+  console.log(passwordLength);
+  console.log(maybeCharacters);
+  console.log(mustHaveCharacters);
+  for(var i = 0; i < requirements.passwordLength; i++) {
+    var character = getRandom(maybeCharacters);
+    finalPassword.push(character);
+    console.log(passwordLength);
+    console.log(maybeCharacters);
+    console.log(mustHaveCharacters);
   };
+
   for(var i = 0; i < mustHaveCharacters.length; i++) {
     finalPassword[i] = mustHaveCharacters[i];
-  }
+  };
+  console.log(passwordLength);
+  console.log(maybeCharacters);
+  console.log(mustHaveCharacters);
+  let answer = finalPassword.join('');
+  return answer;
 };
 
 
 //WORK ON THIS RANDOM FUNCTION TO 
-function random(passwordRequirementsObj) {
-  const value = Math.floor(Math.random() * lowercaseLetters.passwordLength);
-  return value;
+function getRandom(requirements) {
+  const value = Math.floor(Math.random() * requirements.length);
+  return requirements[value];
 };
     //   var randomChar = possible_characters[math.floor(Math.random() * possible_characters.passwordLength + 1)];
     //   password = password + String(randomChar)
