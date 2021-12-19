@@ -11,7 +11,7 @@ Thanks to Qing (TA) and classmate Thom for their help with figuring out the flow
 - Generate password function pushed and concated TRUE (chosen) characters into an empty array to be used for final password.
 - Random function was used to generate final password as well as given code at the end to display that in the text box above the button.
 
-![image](https://user-images.githubusercontent.com/91150259/145678481-b82db8f3-6801-47e8-8acb-946ac537aac1.png)
+![Password_generator_image](https://user-images.githubusercontent.com/91150259/146659163-9625cac0-6974-43ee-a7f6-43440a2bbd3a.png)
 
 #### Link to Application : https://drzimmer.github.io/Daniels_Password_Generator/
 
