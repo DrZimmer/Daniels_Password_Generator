@@ -15,4 +15,4 @@ Thanks to Qing (TA) and classmate Thom for their help with figuring out the flow
 
 #### Link to Application : https://drzimmer.github.io/Daniels_Password_Generator/
 
-Code created by: Daniel Zimmermann
+Code edited by: Daniel Zimmermann
